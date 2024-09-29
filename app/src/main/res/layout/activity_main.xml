@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Header layout positioned above the ListView -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#EFE8F6">
+
+        <!-- Header TextView -->
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+
+            android:text="My Notes"
+            android:textSize="28sp"
+            android:textColor="#6200EE"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Tagline TextView -->
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capture your thoughts and ideas!"
+            android:textSize="18sp"
+            android:textColor="#8A2BE2"
+            android:layout_marginTop="70dp"
+
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- ListView for displaying notes -->
+    <ListView
+        android:id="@+id/lv_all"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:background="#EFE8F6"
+        android:dividerHeight="3dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/header_layout" />
+
+    <!-- Floating Action Button positioned below the ListView -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_add_bu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/lv_all"
+        android:layout_marginTop="30dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="30dp"
+    android:tooltipText="ADD NEW NOTE"
+    android:onClick="bu_add_edit_activity"
+    app:backgroundTint="#6200EE"
+    app:elevation="10dp"
+    app:srcCompat="@drawable/add_icon_style" />
+</RelativeLayout>
